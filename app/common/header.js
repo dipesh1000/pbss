@@ -39,11 +39,11 @@ const Header = () => {
   };
   return (
     <>
-      <div className="container mx-auto px-6   ">
+      <div className="container mx-auto px-20">
         <TopHeader />
       </div>
       <div className="bg-headerbg">
-        <div className="container mx-auto px-6 relative">
+        <div className="container mx-auto px-20 relative">
           <div className="flex items-center py-2">
             <a className="flex-grow">
               <Image width={200} height={80} src="/logo.png"></Image>

@@ -14,6 +14,8 @@ module.exports = {
         headerbg: '#F8F8F8',
         grayText: '#333333',
         darkText: '#666666',
+        pinkctabg: '#F89B38',
+        lightpalebg: '#F8F5EF',
       },
     },
   },

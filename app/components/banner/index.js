@@ -36,7 +36,7 @@ const HomeBanner = () => {
           </div>
           <div className="self-end">
             <Image
-              width="350"
+              width="500"
               height="350"
               src="/bannerimg.png"
               alt="A Registered Leading Disability Support Providers"

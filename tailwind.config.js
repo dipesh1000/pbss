@@ -16,6 +16,7 @@ module.exports = {
         darkText: '#666666',
         pinkctabg: '#F89B38',
         lightpalebg: '#F8F5EF',
+        skylightbg: '#fbfcff',
       },
     },
   },

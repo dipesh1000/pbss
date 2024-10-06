@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import TopHeader from './topHeader';
 import Image from 'next/image';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -44,23 +45,29 @@ const Header = () => {
       </div>
       <div className="bg-headerbg">
         <div className="container mx-auto px-20 relative">
-          <div className="flex items-center py-2">
+          <div className="flex items-center">
             <a className="flex-grow">
               <Image width={200} height={80} src="/logo.png"></Image>
             </a>
-            <div className="hidden md:flex space-x-4">
-              <a href="#" className="text-gray-700 hover:text-blue-600">
+            <div className="hidden md:flex space-x-6 md:justify-between md:w-[450px] w-full">
+              <a
+                href="#"
+                className="text-gray-700 hover:text-blue-600 font-semibold  menu-nav active-nav"
+              >
                 Home
               </a>
-              <a href="#" className="text-gray-700 hover:text-blue-600">
+              <a
+                href="#"
+                className="text-gray-700 hover:text-blue-600 font-semibold menu-nav"
+              >
                 About
               </a>
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={toggleDropdown}
-                  className="text-gray-700 hover:text-blue-600 focus:outline-none"
+                  className="text-gray-700 flex items-center hover:text-blue-600 focus:outline-none menu-nav font-semibold"
                 >
-                  Services
+                  Services&nbsp; <MdKeyboardArrowDown />
                 </button>
                 {isDropdownOpen && (
                   <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow">
@@ -85,7 +92,10 @@ const Header = () => {
                   </div>
                 )}
               </div>
-              <a href="#" className="text-gray-700 hover:text-blue-600">
+              <a
+                href="#"
+                className="text-gray-700 hover:text-blue-600 font-semibold menu-nav"
+              >
                 Contact
               </a>
             </div>
@@ -134,7 +144,7 @@ const Header = () => {
                   onClick={toggleDropdown}
                   className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
                 >
-                  Services
+                  Services <MdKeyboardArrowDown />
                 </button>
                 {isDropdownOpen && (
                   <div className="absolute left-0 mt-2 w-full bg-white border border-gray-200 rounded shadow">

@@ -4,6 +4,8 @@ import ServiceComponent from './components/services';
 import AboutComponents from './components/about';
 import WhyChooseUsComponents from './components/features';
 import ContactComponent from './components/contact';
+import FacComponent from './components/faq';
+import { FrontAds } from './components/ads';
 
 export default function Home() {
   return (
@@ -13,6 +15,10 @@ export default function Home() {
       <AboutComponents />
       <WhyChooseUsComponents />
       <ContactComponent />
+      <FacComponent />
+
+      {/* Ads Section starts */}
+      <FrontAds />
     </>
   );
 }

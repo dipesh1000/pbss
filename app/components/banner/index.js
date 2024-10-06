@@ -12,8 +12,8 @@ const HomeBanner = () => {
         style={{ backgroundImage: 'url("/bannerbg.png")' }}
       >
         <div className="container mx-auto px-20 flex items-center h-[490px]">
-          <div className="w-[630px]">
-            <h1 className="text-white text-5xl leading-normal font-bold w-[630px]">
+          <div className="md:w-[630px] w-full">
+            <h1 className="text-white text-5xl leading-normal font-bold md:w-[630px] full">
               A Registered Leading Disability Support Providers
             </h1>
             <p className="text-white">

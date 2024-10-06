@@ -21,8 +21,25 @@ body {
   font-family: "DM Sans", sans-serif;
 }
 
-@layer utilities {s
+@layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+.menu-nav {
+  line-height: 400%;
+  padding: 5px 0;
+}
+.active-nav {
+  position: relative;
+  color: #374B8D;
+}
+
+.active-nav::before {
+  position: absolute;
+  content: '';
+  height: 5px;
+  width: 100%;
+  bottom: 0;
+  background-color: #F89B38;
 }

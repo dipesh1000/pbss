@@ -12,7 +12,7 @@ const TopHeader = () => {
   return (
     <div className="flex items-center justify-between flex-wrap">
       <ul className="flex">
-        <li className="flex items-center text-primaryBlue">
+        <li className="flex items-center text-primaryBlue text-sm">
           <a>
             <CiPhone />
           </a>
@@ -22,7 +22,9 @@ const TopHeader = () => {
           <a>
             <CiMail />
           </a>
-          <span className="pl-1">info@personalbestsupportservices.com.au</span>
+          <span className="pl-1 text-sm">
+            info@personalbestsupportservices.com.au
+          </span>
         </li>
       </ul>
       <ul className="flex items-center w-32 leading-loose justify-between border-l h-10 border-gray-300 pl-9">

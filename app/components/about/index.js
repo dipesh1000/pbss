@@ -1,5 +1,7 @@
+import { AboutFamilyBox, AboutImageBox } from '@/app/common/aboutimagebox';
 import CustomChip from '@/app/common/customChip';
 import HeadingTitle from '@/app/common/headingTitle';
+import Image from 'next/image';
 import React from 'react';
 
 const AboutComponents = () => {
@@ -9,12 +11,18 @@ const AboutComponents = () => {
       style={{ backgroundImage: 'url("/aboutbg.png")' }}
     >
       <div className="container mx-auto py-20 px-20">
-        <div className="flex">
-          <div className="w-[500px]">
+        <div className="flex flex-wrap">
+          <div className="lg:w-[500px] w-full relative">
+            <div className="absolute right-0 z-[0]">
+              <AboutImageBox />
+            </div>
+
             <div
-              className="h-[410px] bg-contain bg-no-repeat bg-center"
+              className="h-[410px] top-10 right-20 w-[400px] absolute bg-contain bg-no-repeat bg-center"
               style={{ backgroundImage: 'url("/shadowbg.png")' }}
-            ></div>
+            >
+              <AboutFamilyBox />
+            </div>
           </div>
           <div className="flex-1">
             <div>

@@ -3,10 +3,7 @@ import React from 'react';
 const Custominput = ({ label, height, widht, ...rest }) => {
   return (
     <div className="relative w-full max-w-sm">
-      <label
-        htmlFor="email"
-        className="block text-sm font-medium text-gray-700"
-      >
+      <label htmlFor="email" className="block text-sm font-bold text-gray-700">
         {label}
       </label>
       <input

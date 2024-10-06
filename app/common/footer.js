@@ -9,8 +9,8 @@ import Link from 'next/link';
 const FooterComponent = () => {
   return (
     <div>
-      <div className="container mx-auto px-6">
-        <div className="flex items-start">
+      <div className="container mx-auto px-20 py-10">
+        <div className="flex items-start flex-wrap">
           <div className="w-72">
             <div>
               <div>
@@ -71,7 +71,7 @@ const FooterComponent = () => {
               </ul>
             </div>
             <hr />
-            <div className="flex justify-between">
+            <div className="flex justify-between flex-wrap">
               <div className="w-[480px]">
                 <h5 className="my-2">
                   <b>Our Services</b>

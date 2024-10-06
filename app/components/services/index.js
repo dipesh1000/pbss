@@ -104,7 +104,7 @@ const ServiceComponent = () => {
             </p>
           </div>
 
-          <ul className="grid gap-4 grid-cols-4">
+          <ul className="grid gap-4 grid-cols-1 md:grid-cols-3  sm:grid-cols-2 xs:grid-cols-1 lg:grid-cols-4">
             {data.map((item, idx) => {
               return (
                 <li

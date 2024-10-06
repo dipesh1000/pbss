@@ -32,8 +32,8 @@ const WhyChooseUsComponents = () => {
         style={{ backgroundImage: 'url("/featureoverlay.png")' }}
       >
         <div className="container px-20 mx-auto py-20">
-          <div className="flex">
-            <div className="w-[600px]">
+          <div className="flex flex-wrap">
+            <div className="md:w-[600px] w-full">
               <CustomChip label="Why Us" bgColor="bg-pinkctabg" />
               <div className="py-4 w-[400px]">
                 <HeadingTitle
@@ -49,7 +49,7 @@ as your NDIS provider in Australia"
                 </p>
               </div>
             </div>
-            <div className="flex-1">
+            <div className="flex-1 md:mt-6">
               <ul>
                 {data.map((item, idx) => (
                   <li key={idx + 1} className="flex mb-10">

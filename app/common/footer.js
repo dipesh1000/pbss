@@ -73,7 +73,7 @@ const FooterComponent = () => {
             <hr />
             <div className="flex justify-between flex-wrap">
               <div className="w-[480px]">
-                <h5 className="my-2">
+                <h5 className="my-2 text-darkText">
                   <b>Our Services</b>
                 </h5>
                 <ul className="grid grid-cols-2 gap-2 text-darkText">
@@ -88,7 +88,7 @@ const FooterComponent = () => {
                 </ul>
               </div>
               <div>
-                <h5 className="my-2">
+                <h5 className="my-2 text-darkText">
                   <b>About</b>
                 </h5>
                 <ul className="text-darkText">
@@ -98,7 +98,7 @@ const FooterComponent = () => {
                 </ul>
               </div>
               <div>
-                <h5 className="my-2">
+                <h5 className="my-2 text-darkText">
                   <b>Assistance</b>
                 </h5>
                 <ul className="text-darkText">

@@ -16,7 +16,7 @@ export default function CustomAccordion({ title, content }) {
         onClick={toggleAccordion}
         className="flex justify-between items-center p-4 bg-white-100 border-b-2 cursor-pointer"
       >
-        <h2 className="text-lg font-medium">{title}</h2>
+        <h2 className="text-lg font-medium text-darkText">{title}</h2>
         {isOpen ? (
           <HiMinus className="text-xl" />
         ) : (

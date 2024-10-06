@@ -16,7 +16,7 @@ const ContactComponent = () => {
         <div className="container mx-auto py-20 px-20">
           <div className="flex flex-wrap">
             <div className="md:w-[500px] w-full">
-              <p>Contact Us</p>
+              <p className="text-darkText">Contact Us</p>
               <HeadingTitle title="Ask a Question" />
               <div className="grid gap-6 sm:grid-cols-2 grid-cols-1">
                 <Custominput label="Your Name" />
@@ -31,12 +31,12 @@ const ContactComponent = () => {
                 <CustomButton
                   endIcon={<GoArrowRight />}
                   label="Send"
-                  className="bg-pinkctabg w-full flex justify-center mt-8"
+                  className="bg-pinkctabg w-full flex justify-center mt-8 font-bold"
                 />
               </div>
             </div>
             <div className="w-[500px] lg:pl-16 pl-0 pt-6">
-              <div className="font-bold text-4xl leading-normal">
+              <div className="font-bold text-4xl leading-normal text-black">
                 Direct {<span className="text-primaryBlue">Contact</span>} Us
               </div>
               <ul className="pt-4">

@@ -5,7 +5,7 @@ import { GrSend } from 'react-icons/gr';
 
 export const FrontAds = () => {
   return (
-    <div>
+    <div className="bg-white">
       <div className="container mx-auto p-20">
         <div className="py-16 px-32 bg-primaryBlue rounded-tl-[150px]">
           <div className="md:w-[490px] w-full">

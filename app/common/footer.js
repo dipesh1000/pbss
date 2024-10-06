@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const FooterComponent = () => {
   return (
-    <div>
+    <div className="bg-white">
       <div className="container mx-auto px-20 py-10">
         <div className="flex items-start flex-wrap">
           <div className="w-72">

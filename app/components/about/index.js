@@ -24,7 +24,7 @@ const AboutComponents = () => {
               <AboutFamilyBox />
             </div>
           </div>
-          <div className="flex-1">
+          <div className="flex-1 pl-20">
             <div>
               <CustomChip label="About Us" />
               <div className="mt-4">

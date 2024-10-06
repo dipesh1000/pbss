@@ -3,7 +3,7 @@ import React from 'react';
 const HeadingTitle = ({ title, color }) => {
   return (
     <h2
-      className={`${color ?? ''} font-bold text-4xl leading-normal
+      className={`${color ?? 'text-black'} font-bold text-4xl leading-normal
 `}
     >
       {title}

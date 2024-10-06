@@ -8,12 +8,12 @@ const HomeBanner = () => {
   return (
     <div>
       <div
-        className="h-[491px] bg-cover bg-center"
+        className="2xl:h-[700px] h-[600px] bg-cover bg-center"
         style={{ backgroundImage: 'url("/bannerbg.png")' }}
       >
-        <div className="container mx-auto px-20 flex items-center h-[490px]">
+        <div className="container mx-auto px-20 flex items-center 2xl:h-[700px] h-[600px]">
           <div className="md:w-[630px] w-full">
-            <h1 className="text-white text-5xl leading-normal font-bold md:w-[630px] full">
+            <h1 className="text-white text-5xl leading-normal font-bold md:w-[630px]">
               A Registered Leading Disability Support Providers
             </h1>
             <p className="text-white">
@@ -35,7 +35,12 @@ const HomeBanner = () => {
             </div>
           </div>
           <div className="self-end">
-            <Image width="350" height="350" src="/bannerimg.png" />
+            <Image
+              width="350"
+              height="350"
+              src="/bannerimg.png"
+              alt="A Registered Leading Disability Support Providers"
+            />
           </div>
         </div>
       </div>

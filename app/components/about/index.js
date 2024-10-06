@@ -4,10 +4,10 @@ import HeadingTitle from '@/app/common/headingTitle';
 import Image from 'next/image';
 import React from 'react';
 
-const AboutComponents = () => {
+const AboutComponents = ({ isFag, title }) => {
   return (
     <div
-      className="bg-no-repeat bg-cover bg-center"
+      className="bg-no-repeat bg-cover bg-center h-[610px]"
       style={{ backgroundImage: 'url("/aboutbg.png")' }}
     >
       <div className="container mx-auto py-20 px-20">
@@ -26,9 +26,13 @@ const AboutComponents = () => {
           </div>
           <div className="flex-1 pl-20">
             <div>
-              <CustomChip label="About Us" />
+              {isFag ? <CustomChip label="About Us" /> : ''}
               <div className="mt-4">
-                <HeadingTitle title="Get high-quality health care for your needs" />
+                <HeadingTitle
+                  title={`${
+                    title ?? 'Get high-quality health care for your needs'
+                  }`}
+                />
               </div>
               <p className="text-darkText mb-4">
                 At Personal Best Support Services, we are dedicated to

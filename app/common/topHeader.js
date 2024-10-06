@@ -53,7 +53,7 @@ const TopHeader = () => {
         <li className="flex items-center">
           <Image width={30} height={20} src="/image.png" />
           <a className="pl-2">
-            <b className="text-sm">Registered NDIS Provider</b>
+            <b className="text-sm text-black">Registered NDIS Provider</b>
           </a>
         </li>
         <li className="pl-6">

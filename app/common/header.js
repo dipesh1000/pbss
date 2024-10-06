@@ -39,7 +39,7 @@ const Header = () => {
     setDropdownOpen(!isDropdownOpen);
   };
   return (
-    <>
+    <div className="bg-white">
       <div className="container mx-auto px-20">
         <TopHeader />
       </div>
@@ -179,7 +179,7 @@ const Header = () => {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

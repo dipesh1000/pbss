@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import TopHeader from './topHeader';
 import Image from 'next/image';
 import { MdKeyboardArrowDown } from 'react-icons/md';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -38,6 +40,8 @@ const Header = () => {
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
+  const router = usePathname();
+
   return (
     <div className="bg-white">
       <div className="container mx-auto px-20">
@@ -46,22 +50,26 @@ const Header = () => {
       <div className="bg-headerbg">
         <div className="container mx-auto px-20 relative">
           <div className="flex items-center">
-            <a className="flex-grow">
+            <Link href="/" className="flex-grow">
               <Image width={200} height={80} src="/logo.png"></Image>
-            </a>
+            </Link>
             <div className="hidden md:flex space-x-6 md:justify-between md:w-[450px] w-full">
-              <a
-                href="#"
-                className="text-gray-700 hover:text-blue-600 font-semibold  menu-nav active-nav"
+              <Link
+                href="/"
+                className={`text-gray-700 hover:text-blue-600 font-semibold  menu-nav ${
+                  router === '/' ? 'active-nav' : ''
+                }`}
               >
                 Home
-              </a>
-              <a
-                href="#"
-                className="text-gray-700 hover:text-blue-600 font-semibold menu-nav"
+              </Link>
+              <Link
+                href="/about"
+                className={`text-gray-700 hover:text-blue-600 font-semibold menu-nav ${
+                  router === '/about' ? 'active-nav' : ''
+                }`}
               >
                 About
-              </a>
+              </Link>
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={toggleDropdown}
@@ -92,12 +100,14 @@ const Header = () => {
                   </div>
                 )}
               </div>
-              <a
-                href="#"
-                className="text-gray-700 hover:text-blue-600 font-semibold menu-nav"
+              <Link
+                href="/contact"
+                className={`text-gray-700 hover:text-blue-600 font-semibold menu-nav ${
+                  router === '/contact' ? 'active-nav' : ''
+                }`}
               >
                 Contact
-              </a>
+              </Link>
             </div>
           </div>
           <div className="md:hidden absolute top-7 right-0">

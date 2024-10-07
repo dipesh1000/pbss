@@ -17,6 +17,8 @@ module.exports = {
         pinkctabg: '#F89B38',
         lightpalebg: '#F8F5EF',
         skylightbg: '#fbfcff',
+        palewhitebg: '#fafafa',
+        playbg: '#E4ECF9',
       },
     },
   },

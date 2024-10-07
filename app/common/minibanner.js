@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Aboutbanner = () => {
+const Minibanner = ({ pageName, aboutPage }) => {
   return (
     <div
       className="h-[358px] bg-contain bg-no-repeat bg-center"
@@ -10,10 +10,10 @@ const Aboutbanner = () => {
         <div className="flex items-center justify-center h-[358px]">
           <div className="w-60 text-center">
             <span className="font-semibold text-pinkctabg  text-sm">
-              About Us
+              {pageName ?? 'Page Name'}
             </span>
             <h1 className="text-2xl text-white text-center font-bold">
-              A Registered Leading Disability Support Providers
+              {aboutPage ?? 'Here the page will go.'}
             </h1>
           </div>
         </div>
@@ -22,4 +22,4 @@ const Aboutbanner = () => {
   );
 };
 
-export default Aboutbanner;
+export default Minibanner;

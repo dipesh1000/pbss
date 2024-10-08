@@ -7,97 +7,17 @@ import CustomChip from '@/app/common/customChip';
 import HeadingTitle from '@/app/common/headingTitle';
 import { useRef } from 'react';
 import { motion, useScroll } from 'framer-motion';
+import { Services } from '@/rawdata/service';
+import Image from 'next/image';
 
 const Servicesabout = () => {
-  const data = [
-    {
-      icon: <TbBath fontSize={30} />,
-      title: 'Assistance with Self Care Activities',
-      arrowIcon: (
-        <HiArrowLongRight
-          fontSize={30}
-          className="absolute bottom-8 left-7 transition-all duration-300 ease-in-out group-hover:bottom-8 group-hover:right-7 group-hover:left-auto"
-        />
-      ),
-    },
-    {
-      icon: <TbBath fontSize={30} />,
-      title: 'Assistance with Self Care Activities',
-      arrowIcon: (
-        <HiArrowLongRight
-          fontSize={30}
-          className="absolute bottom-8 left-7 transition-all duration-300 ease-in-out group-hover:bottom-8 group-hover:right-7 group-hover:left-auto"
-        />
-      ),
-    },
-    {
-      icon: <TbBath fontSize={30} />,
-      title: 'Assistance with Self Care Activities',
-      arrowIcon: (
-        <HiArrowLongRight
-          fontSize={30}
-          className="absolute bottom-8 left-7 transition-all duration-300 ease-in-out group-hover:bottom-8 group-hover:right-7 group-hover:left-auto"
-        />
-      ),
-    },
-    {
-      icon: <TbBath fontSize={30} />,
-      title: 'Assistance with Self Care Activities',
-      arrowIcon: (
-        <HiArrowLongRight
-          fontSize={30}
-          className="absolute bottom-8 left-7 transition-all duration-300 ease-in-out group-hover:bottom-8 group-hover:right-7 group-hover:left-auto"
-        />
-      ),
-    },
-    {
-      icon: <TbBath fontSize={30} />,
-      title: 'Assistance with Self Care Activities',
-      arrowIcon: (
-        <HiArrowLongRight
-          fontSize={30}
-          className="absolute bottom-8 left-7 transition-all duration-300 ease-in-out group-hover:bottom-8 group-hover:right-7 group-hover:left-auto"
-        />
-      ),
-    },
-    {
-      icon: <TbBath fontSize={30} />,
-      title: 'Assistance with Self Care Activities',
-      arrowIcon: (
-        <HiArrowLongRight
-          fontSize={30}
-          className="absolute bottom-8 left-7 transition-all duration-300 ease-in-out group-hover:bottom-8 group-hover:right-7 group-hover:left-auto"
-        />
-      ),
-    },
-    {
-      icon: <TbBath fontSize={30} />,
-      title: 'Assistance with Self Care Activities',
-      arrowIcon: (
-        <HiArrowLongRight
-          fontSize={30}
-          className="absolute bottom-8 left-7 transition-all duration-300 ease-in-out group-hover:bottom-8 group-hover:right-7 group-hover:left-auto"
-        />
-      ),
-    },
-    {
-      icon: <TbBath fontSize={30} />,
-      title: 'Assistance with Self Care Activities',
-      arrowIcon: (
-        <HiArrowLongRight
-          fontSize={30}
-          className="absolute bottom-8 left-7 transition-all duration-300 ease-in-out group-hover:bottom-8 group-hover:right-7 group-hover:left-auto"
-        />
-      ),
-    },
-  ];
+  const data = Services;
 
   const ref = useRef(null);
   const { scrollXProgress } = useScroll({ container: ref });
 
-  console.log(scrollXProgress, ref, 'from scroll x progress');
   return (
-    <div className="bg-primaryBlue">
+    <div className="relative h-[700px]">
       <div className="container mx-auto relative pl-20 py-20">
         <div className="  text-center ">
           <CustomChip label="Our Services" />
@@ -122,20 +42,41 @@ const Servicesabout = () => {
               style={{ pathLength: scrollXProgress }}
             />
           </svg>
-          <div className="overflow-x-auto">
-            <ul ref={ref} className="flex space-x-4">
+          <div className="absolute z-1 container pr-1">
+            <ul
+              ref={ref}
+              className="flex space-x-4 flex-nowrap overflow-x-scroll"
+            >
               {data.map((item, idx) => {
                 return (
                   <li
                     key={idx + 1}
-                    className="border-gray-200 min-w-[200px] w-[300px] border bg-white text-darkText transition-all duration-300 ease-in-out hover:text-white hover:bg-primaryBlue rounded pt-12 pb-16 px-8 relative group"
+                    className="border-gray-200 min-w-[250px] w-[300px] shadow-lg border bg-white text-darkText transition-all duration-300 ease-in-out hover:text-white hover:bg-primaryBlue rounded-2xl  relative group"
                   >
                     <Link href="/">
-                      <>
-                        {item.icon}
-                        <p className="py-2 font-bold ">{item.title}</p>
-                        {item.arrowIcon}
-                      </>
+                      <div className="card">
+                        <div>
+                          <Image
+                            height="200"
+                            width="200"
+                            src={item.imgUrl}
+                            alt={item.title}
+                            style={{ width: '100%' }}
+                          />
+                        </div>
+                        <div
+                          className={`px-8 rounded-b-2xl`}
+                          style={{
+                            background: `${item.color}`,
+                            height: '120px',
+                            overflow: 'hidden',
+                          }}
+                        >
+                          {/* {item.icon} */}
+                          <p className="py-4 font-bold">{item.title}</p>
+                          {/* {item.arrowIcon} */}
+                        </div>
+                      </div>
                     </Link>
                   </li>
                 );

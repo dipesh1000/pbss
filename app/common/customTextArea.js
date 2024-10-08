@@ -1,8 +1,8 @@
 import React from 'react';
 
-const CustomTextArea = () => {
+const CustomTextArea = ({ type }) => {
   return (
-    <div className="relative w-full">
+    <div className="relative w-full max-w-sm">
       <label
         htmlFor="message"
         className="block text-sm font-bold text-gray-700"
@@ -13,7 +13,9 @@ const CustomTextArea = () => {
         id="message"
         name="message"
         rows="4"
-        className="mt-1 block w-full border-b-2 border-gray-300 focus:border-primaryBlue focus:outline-none focus:ring-0 px-4 py-2 sm:text-sm"
+        className={`mt-1 block w-full ${
+          type === 'standard' ? 'border rounded-md shadow-sm' : 'border-b-2'
+        } border-gray-300 focus:border-primaryBlue focus:outline-none focus:ring-0 px-4 py-2 sm:text-sm`}
         placeholder="Enter your message here"
       ></textarea>
     </div>

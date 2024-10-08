@@ -29,7 +29,7 @@ We are passionate about offering tailored support that meets the unique needs an
 We are passionate about offering tailored support that meets the unique needs and aspirations of each person we serve. Our experienced and caring team works diligently to empower lives and enable dreams, ensuring that every client can thrive, achieve their goals, and truly shine. Join us on a journey of empowerment and transformation, because at Personal Best, we believe in enabling dreams and fostering independence."
       />
       <Servicesabout />
-      <FrontAds imgsrc="" />
+      <FrontAds imgSrc="/adsimg.png" />
     </div>
   );
 };

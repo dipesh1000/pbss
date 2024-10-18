@@ -9,18 +9,52 @@ import { useRef } from 'react';
 import { motion, useScroll } from 'framer-motion';
 import { Services } from '@/rawdata/service';
 import Image from 'next/image';
+import Slider from 'react-slick';
 
-const Servicesabout = () => {
+const Servicesabout = ({ topLabel }) => {
   const data = Services;
-
-  const ref = useRef(null);
-  const { scrollXProgress } = useScroll({ container: ref });
-
+  var settings = {
+    dots: false,
+    infinite: true,
+    speed: 4000, // Adjust the speed for smoothness
+    slidesToShow: 5, // Number of visible slides
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 0, // Continuous sliding effect
+    cssEase: 'linear', // Linear easing for smooth transition
+    pauseOnHover: true, // Continuous autoplay
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <div className="relative h-[700px]">
-      <div className="container mx-auto relative pl-20 py-20">
+      <div className="container mx-auto relative pl-20 pt-20 pb-10">
         <div className="  text-center ">
-          <CustomChip label="Our Services" />
+          <CustomChip label={`${topLabel ?? 'Our Services'}`} />
         </div>
         <div className="pt-4">
           <div className="flex flex-col items-center py-2">
@@ -31,59 +65,45 @@ const Servicesabout = () => {
               include:
             </p>
           </div>
-          <svg id="progress" width="100" height="100" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="30" pathLength="1" className="bg" />
-            <motion.circle
-              cx="50"
-              cy="50"
-              r="30"
-              pathLength="1"
-              className="indicator"
-              style={{ pathLength: scrollXProgress }}
-            />
-          </svg>
-          <div className="absolute z-1 container pr-1">
-            <ul
-              ref={ref}
-              className="flex space-x-4 flex-nowrap overflow-x-scroll"
-            >
-              {data.map((item, idx) => {
-                return (
-                  <li
-                    key={idx + 1}
-                    className="border-gray-200 min-w-[250px] w-[300px] shadow-lg border bg-white text-darkText transition-all duration-300 ease-in-out hover:text-white hover:bg-primaryBlue rounded-2xl  relative group"
-                  >
-                    <Link href="/">
-                      <div className="card">
-                        <div>
-                          <Image
-                            height="200"
-                            width="200"
-                            src={item.imgUrl}
-                            alt={item.title}
-                            style={{ width: '100%' }}
-                          />
-                        </div>
-                        <div
-                          className={`px-8 rounded-b-2xl`}
-                          style={{
-                            background: `${item.color}`,
-                            height: '120px',
-                            overflow: 'hidden',
-                          }}
-                        >
-                          {/* {item.icon} */}
-                          <p className="py-4 font-bold">{item.title}</p>
-                          {/* {item.arrowIcon} */}
-                        </div>
-                      </div>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
         </div>
+      </div>
+      <div className="slider-container">
+        <Slider {...settings}>
+          {data.map((item, idx) => {
+            return (
+              <li
+                key={idx + 1}
+                className="border-gray-200  shadow-lg border bg-white text-darkText transition-all duration-300 ease-in-out hover:text-white hover:bg-primaryBlue rounded-2xl  relative group"
+              >
+                <Link href="/">
+                  <div className="card">
+                    <div>
+                      <Image
+                        height="200"
+                        width="200"
+                        src={item.imgUrl}
+                        alt={item.title}
+                        style={{ width: '100%' }}
+                      />
+                    </div>
+                    <div
+                      className={`px-8 rounded-b-2xl`}
+                      style={{
+                        background: `${item.color}`,
+                        height: '120px',
+                        overflow: 'hidden',
+                      }}
+                    >
+                      {/* {item.icon} */}
+                      <p className="py-4 font-bold">{item.title}</p>
+                      {/* {item.arrowIcon} */}
+                    </div>
+                  </div>
+                </Link>
+              </li>
+            );
+          })}
+        </Slider>
       </div>
     </div>
   );

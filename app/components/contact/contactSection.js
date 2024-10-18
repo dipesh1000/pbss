@@ -21,7 +21,7 @@ const ContactSection = () => {
           <HeadingTitle title="Contact Us" color="text-black" />
         </div>
         <div className="flex flex-wrap">
-          <div className="w-[48%]">
+          <div className="lg:w-[48%] w-full">
             <ul className="mb-5">
               <li className="flex flex-wrap items-center mb-5">
                 <div className="w-11">
@@ -67,8 +67,8 @@ const ContactSection = () => {
             </div>
           </div>
           <div className="flex-1">
-            <div className="w-[480px] block mx-auto ">
-              <div className="grid gap-4 justify-center shadow-xl border-gray-200 border rounded-lg py-6">
+            <div className="lg:w-[480px] w-full block mx-auto ">
+              <div className="grid gap-4 lg:px-0 px-4 justify-center shadow-xl border-gray-200 border rounded-lg py-6">
                 <h2 className="font-bold text-xl">For Inquiry</h2>
                 <Custominput
                   label="Your Name"

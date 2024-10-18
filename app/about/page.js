@@ -2,9 +2,9 @@ import React from 'react';
 import AboutComponents from '../components/about';
 import Minibanner from '../common/minibanner';
 import Servicesabout from '../components/services/servicesabout';
-import WhyChooseUsComponents from '../components/features';
 import MeetExperts from '../components/meetexpert';
 import { FrontAds } from '../components/ads';
+import FeaturesSection from '../components/features/featuresSection';
 
 const About = () => {
   return (
@@ -20,7 +20,7 @@ const About = () => {
 
 We are passionate about offering tailored support that meets the unique needs and aspirations of each person we serve. Our experienced and caring team works diligently to empower lives and enable dreams, ensuring that every client can thrive, achieve their goals, and truly shine. Join us on a journey of empowerment and transformation, because at Personal Best, we believe in enabling dreams and fostering independence."
       />
-      <WhyChooseUsComponents />
+      <FeaturesSection pagekey="about" />
       <MeetExperts
         isFag={false}
         title="Meet The Expert"
@@ -28,7 +28,7 @@ We are passionate about offering tailored support that meets the unique needs an
 
 We are passionate about offering tailored support that meets the unique needs and aspirations of each person we serve. Our experienced and caring team works diligently to empower lives and enable dreams, ensuring that every client can thrive, achieve their goals, and truly shine. Join us on a journey of empowerment and transformation, because at Personal Best, we believe in enabling dreams and fostering independence."
       />
-      <Servicesabout />
+      <Servicesabout topLabel="Our Services" />
       <FrontAds imgSrc="/adsimg.png" />
     </div>
   );

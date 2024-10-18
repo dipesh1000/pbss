@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Services } from '@/rawdata/service';
 
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -12,6 +13,8 @@ const Header = () => {
 
   const dropdownRef = useRef(null);
   const mobileMenuRef = useRef(null);
+
+  const data = Services;
 
   // Handle clicks outside of the dropdown and mobile menu
   useEffect(() => {
@@ -51,7 +54,7 @@ const Header = () => {
         <div className="container mx-auto px-20 relative">
           <div className="flex items-center">
             <Link href="/" className="flex-grow">
-              <Image width={200} height={80} src="/logo.png"></Image>
+              <Image width={200} height={80} src="/logo.png" alt="Logo"></Image>
             </Link>
             <div className="hidden md:flex space-x-6 md:justify-between md:w-[450px] w-full">
               <Link
@@ -78,25 +81,16 @@ const Header = () => {
                   Services&nbsp; <MdKeyboardArrowDown />
                 </button>
                 {isDropdownOpen && (
-                  <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow">
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                    >
-                      Web Development
-                    </a>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                    >
-                      Graphic Design
-                    </a>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                    >
-                      SEO
-                    </a>
+                  <div className="absolute left-0 font-semibold w-80 bg-white  text-sm border border-gray-200 rounded shadow">
+                    {data.map((item, idx) => (
+                      <Link
+                        key={idx + 1}
+                        href={`/service/${item.id}`}
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                      >
+                        {item.title}
+                      </Link>
+                    ))}
                   </div>
                 )}
               </div>
@@ -137,18 +131,18 @@ const Header = () => {
               ref={mobileMenuRef}
               className="md:hidden bg-white border-t border-gray-200"
             >
-              <a
+              <Link
                 href="#"
                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
               >
                 Home
-              </a>
-              <a
+              </Link>
+              <Link
                 href="#"
                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
               >
                 About
-              </a>
+              </Link>
               <div className="relative">
                 <button
                   onClick={toggleDropdown}
@@ -158,33 +152,33 @@ const Header = () => {
                 </button>
                 {isDropdownOpen && (
                   <div className="absolute left-0 mt-2 w-full bg-white border border-gray-200 rounded shadow">
-                    <a
+                    <Link
                       href="#"
                       className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                     >
                       Web Development
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="#"
                       className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                     >
                       Graphic Design
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="#"
                       className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                     >
                       SEO
-                    </a>
+                    </Link>
                   </div>
                 )}
               </div>
-              <a
+              <Link
                 href="#"
                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
               >
                 Contact
-              </a>
+              </Link>
             </div>
           )}
         </div>

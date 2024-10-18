@@ -36,7 +36,7 @@ body {
 }
 
 code {
-  font-family: input-mono, monospace;
+  font-family: "DM Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -96,4 +96,12 @@ ul.serviceabout {
   width: 100%;
   bottom: 0;
   background-color: #F89B38;
+}
+
+.slick-slide {
+  margin-right: 15px; /* Adjust the space between slides */
+}
+
+.slick-list {
+  margin-left: -15px; /* To offset the initial spacing */
 }

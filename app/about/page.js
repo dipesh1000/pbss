@@ -1,12 +1,16 @@
+'use server';
 import React from 'react';
 import AboutComponents from '../components/about';
 import Minibanner from '../common/minibanner';
-import Servicesabout from '../components/services/servicesabout';
 import MeetExperts from '../components/meetexpert';
 import { FrontAds } from '../components/ads';
 import FeaturesSection from '../components/features/featuresSection';
+import Servicesabout from '../components/services/servicesabout';
+import { fetchPosts } from '@/API';
 
-const About = () => {
+const About = async () => {
+  let serviceData = await fetchPosts();
+
   return (
     <div>
       <Minibanner
@@ -28,7 +32,8 @@ We are passionate about offering tailored support that meets the unique needs an
 
 We are passionate about offering tailored support that meets the unique needs and aspirations of each person we serve. Our experienced and caring team works diligently to empower lives and enable dreams, ensuring that every client can thrive, achieve their goals, and truly shine. Join us on a journey of empowerment and transformation, because at Personal Best, we believe in enabling dreams and fostering independence."
       />
-      <Servicesabout topLabel="Our Services" />
+      <Servicesabout topLabel="Our Services" serviceData={serviceData} />
+
       <FrontAds imgSrc="/adsimg.png" />
     </div>
   );

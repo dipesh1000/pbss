@@ -8,20 +8,20 @@ export const FrontAds = ({ imgSrc }) => {
   return (
     <div className="bg-white">
       <div className="container mx-auto px-20 py-10">
-        <div className="flex justify-between py-16 px-32 bg-primaryBlue rounded-tl-[150px]">
+        <div className="flex flex-wrap-reverse justify-between py-16 md:px-32 px-10 bg-primaryBlue rounded-tl-[150px]">
           <div className="md:w-[490px] w-full">
             <HeadingTitle
               title="Get high-quality health care for your needs"
               color="text-white"
             />
-            <div className="flex mt-6">
+            <div className="flex flex-wrap mt-6">
               <CustomButton
                 startIcon={<GrSend />}
                 className="bg-pinkctabg"
                 label="Make a Refferal"
               />
               <CustomButton
-                className="ml-2 text-primaryBlue bg-white"
+                className="md:ml-2 ml-0 text-primaryBlue bg-white"
                 startIcon={<LuPhoneCall />}
                 label="Call 00000000000"
               />

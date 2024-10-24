@@ -18,13 +18,13 @@ const AboutComponents = ({ isFag, title }) => {
             </div>
 
             <div
-              className="h-[410px] top-10 right-20 w-[400px] absolute bg-contain bg-no-repeat bg-center"
+              className="h-[410px] top-10 right-20 w-[400px] absolute sm:block hidden bg-contain bg-no-repeat bg-center"
               style={{ backgroundImage: 'url("/shadowbg.png")' }}
             >
               <AboutFamilyBox />
             </div>
           </div>
-          <div className="flex-1 pl-20">
+          <div className="flex-1 sm:pl-20 pl-0">
             <div>
               {isFag ? <CustomChip label="About Us" /> : ''}
               <div className="mt-4">
@@ -33,6 +33,12 @@ const AboutComponents = ({ isFag, title }) => {
                     title ?? 'Get high-quality health care for your needs'
                   }`}
                 />
+              </div>
+              <div
+                className="sm:h-[410px] h-[250px] mx-auto sm:w-[400px] w-full block sm:hidden bg-contain bg-no-repeat bg-left"
+                style={{ backgroundImage: 'url("/shadowbg.png")' }}
+              >
+                <AboutFamilyBox resize="250" />
               </div>
               <p className="text-darkText mb-4">
                 At Personal Best Support Services, we are dedicated to

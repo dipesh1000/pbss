@@ -36,7 +36,7 @@ const WhyChooseUsComponents = ({ pagekey }) => {
           <div className="flex flex-wrap">
             <div className="md:w-[600px] w-full">
               <CustomChip label="Why Us" bgColor="bg-pinkctabg" />
-              <div className="py-4 w-[400px]">
+              <div className="py-4 md:w-[400px] w-full">
                 <HeadingTitle
                   color="text-pinkctabg"
                   title="Why Choose Personal Best Support Services
@@ -59,7 +59,7 @@ as your NDIS provider in Australia"
                 <ul>
                   {data.map((item, idx) => (
                     <li key={idx + 1} className="flex mb-10">
-                      <div className="text-white w-48 text-4xl">
+                      <div className="text-white md:w-48 w-full text-4xl">
                         <RiHandHeartLine />
                       </div>
                       <div>

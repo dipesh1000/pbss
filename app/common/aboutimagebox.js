@@ -34,7 +34,7 @@ const boxVariantsFam = {
   visible: { opacity: 1, x: 0 },
 };
 
-export const AboutFamilyBox = ({ imgsrc }) => {
+export const AboutFamilyBox = ({ imgsrc, resize }) => {
   const ref = useRef();
   const isVisible = useOnScreen(ref, { threshold: 0.1 });
 
@@ -50,7 +50,7 @@ export const AboutFamilyBox = ({ imgsrc }) => {
       <Image
         src={imgsrc ?? `/familyimage.png`}
         height={250}
-        width={580}
+        width={resize ?? 580}
         alt="About image"
       />
     </motion.div>

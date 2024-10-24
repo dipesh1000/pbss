@@ -35,7 +35,7 @@ const ContactComponent = () => {
                 />
               </div>
             </div>
-            <div className="w-[500px] lg:pl-16 pl-0 pt-6">
+            <div className="md:w-[500px] w-full lg:pl-16 pl-0 pt-6">
               <div className="font-bold text-4xl leading-normal text-black">
                 Direct {<span className="text-primaryBlue">Contact</span>} Us
               </div>

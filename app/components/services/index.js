@@ -20,7 +20,7 @@ const ServiceComponent = ({ pageKey }) => {
         <div className="pt-4">
           <div className="flex flex-col items-center py-2">
             <HeadingTitle title="Assistance to improve daily living" />
-            <p className="py-2 w-[550px] px-2 text-center">
+            <p className="py-2 md:w-[550px] w-full   px-2 text-center">
               Our NDIS support services offer a broad range of assistance to
               improve daily living and foster community involvement. These
               include:

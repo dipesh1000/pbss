@@ -31,7 +31,10 @@ export default function CustomAccordion({ title, content }) {
         }`}
       >
         <div className="p-4 bg-white border-b-2">
-          <p className="text-gray-600">{content}</p>
+          <div
+            className="text-gray-600"
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
         </div>
       </div>
     </div>

@@ -105,3 +105,18 @@ ul.serviceabout {
 .slick-list {
   margin-left: -15px; /* To offset the initial spacing */
 }
+
+.slider-item {
+  max-width: 300px; /* Control the max width of each slide */
+  margin: auto; /* Center the slide content */
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: center; /* Center slide content horizontally */
+}
+
+/* Optional: Adjust for single or two items */
+.slick-center .slider-item {
+  transform: scale(0.9); /* Slightly scale down centered items */
+}

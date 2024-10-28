@@ -9,7 +9,7 @@ import Link from 'next/link';
 const FooterComponent = () => {
   return (
     <div className="bg-white">
-      <div className="container mx-auto px-20 py-10">
+      <div className="container mx-auto lg:px-20 px-5 py-10">
         <div className="flex items-start flex-wrap">
           <div className="lg:w-72 w-full">
             <div className="lg:w-72 w-full">
@@ -46,7 +46,7 @@ const FooterComponent = () => {
               </ul>
             </div>
           </div>
-          <div className="flex-1 ml-10">
+          <div className="flex-1 sm:ml-10 ml-0">
             <div className="flex items-center flex-wrap">
               <Image
                 width={80}

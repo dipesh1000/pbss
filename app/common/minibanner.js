@@ -3,7 +3,7 @@ import React from 'react';
 const Minibanner = ({ pageName, aboutPage }) => {
   return (
     <div
-      className="lg:h-[358px] h-[200px] lg:bg-contain bg-cover bg-no-repeat bg-center"
+      className="lg:h-[358px] h-[200px] lg:bg-cover bg-cover bg-no-repeat bg-center"
       style={{ backgroundImage: 'url("/aboutbanner.png")' }}
     >
       <div className="container mx-auto px-20">

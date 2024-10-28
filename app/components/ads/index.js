@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export const FrontAds = ({ imgSrc }) => {
   return (
-    <div className="bg-white">
+    <div className="bg-white md:block hidden">
       <div className="container mx-auto px-20 py-10">
         <div className="flex flex-wrap-reverse justify-between py-16 md:px-32 px-10 bg-primaryBlue rounded-tl-[150px]">
           <div className="md:w-[490px] w-full">

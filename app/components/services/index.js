@@ -3,10 +3,13 @@ import Link from 'next/link';
 import CustomChip from '@/app/common/customChip';
 import HeadingTitle from '@/app/common/headingTitle';
 import { Services } from '@/rawdata/service';
+import { HiArrowLongRight } from 'react-icons/hi2';
+import { fetchPosts } from '@/API';
+import Image from 'next/image';
 
-const data = Services;
-
-const ServiceComponent = ({ pageKey }) => {
+const ServiceComponent = async ({ pageKey }) => {
+  let items = await fetchPosts();
+  console.log(items, 'from items in line 11');
   return (
     <div className="bg-lightpalebg">
       <div className="container mx-auto px-20 py-20">
@@ -28,17 +31,31 @@ const ServiceComponent = ({ pageKey }) => {
           </div>
 
           <ul className="grid gap-4 grid-cols-1 md:grid-cols-3  sm:grid-cols-2 xs:grid-cols-1 lg:grid-cols-4">
-            {data.map((item, idx) => {
+            {items?.map((item, idx) => {
+              console.log(Boolean(item.acf.icon), 'dasdsad');
               return (
                 <li
                   key={idx + 1}
                   className="border-gray-200 border bg-white text-darkText transition-all duration-300 ease-in-out hover:text-white hover:bg-primaryBlue rounded pt-12 pb-16 px-8 relative group"
                 >
-                  <Link href={`/service/${item.id}`}>
+                  <Link href={`/service/${item?.id}`}>
                     <>
-                      {item.icon}
-                      <p className="py-2 font-bold ">{item.title}</p>
-                      {item.arrowIcon}
+                      <Image
+                        height="53"
+                        width="53"
+                        alt="icon"
+                        src={
+                          Boolean(item.acf.icon)
+                            ? item.acf.icon.url
+                            : '/icondummy.png'
+                        }
+                      />
+
+                      <p className="py-2 font-bold ">{item?.title?.rendered}</p>
+                      <HiArrowLongRight
+                        fontSize={30}
+                        className="absolute bottom-8 left-7 transition-all duration-300 ease-in-out group-hover:bottom-8 group-hover:right-7 group-hover:left-auto"
+                      />
                     </>
                   </Link>
                 </li>

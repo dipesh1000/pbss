@@ -6,24 +6,29 @@ import React from 'react';
 const MeetExperts = ({ isFag, title }) => {
   return (
     <div
-      className="bg-no-repeat bg-cover bg-center h-[610px]"
+      className="bg-no-repeat bg-cover bg-center"
       //  style={{ backgroundImage: 'url("/aboutbg.png")' }}
     >
-      <div className="container mx-auto py-20 px-20">
-        <div className="flex flex-wrap">
-          <div className="lg:w-[500px] w-full relative">
-            <div className="absolute right-0 z-[0]">
+      <div className="container mx-auto py-20 lg:px-20 md:px-0 px-5">
+        <div className="mb-4 sm:hidden block">
+          <HeadingTitle
+            title={`${title ?? 'Get high-quality health care for your needs'}`}
+          />
+        </div>
+        <div className="flex sm:flex-nowrap flex-wrap">
+          <div className="sm:w-[45%] w-full relative">
+            <div className="sm:absolute right-0 z-[0]">
               <AboutImageBox />
             </div>
 
-            <div className="h-[410px] pt-8 pl-8 top-10 right-20 w-[400px] absolute bg-playbg rounded-2xl">
+            <div className="lg:h-[410px]  pb-5 pt-8 pl-8 top-10 left-0 right-20 lg:w-[400px] sm:absolute w-full static bg-playbg rounded-2xl">
               <AboutFamilyBox imgsrc={'/musicicon.png'} />
             </div>
           </div>
-          <div className="flex-1 pl-20">
+          <div className="flex-1 lg:pl-20 sm:pl-8 pl-0">
             <div>
               {isFag ? <CustomChip label="About Us" /> : ''}
-              <div className="mt-4">
+              <div className="mt-4 sm:block hidden">
                 <HeadingTitle
                   title={`${
                     title ?? 'Get high-quality health care for your needs'

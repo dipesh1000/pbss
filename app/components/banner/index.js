@@ -11,13 +11,13 @@ const HomeBanner = () => {
         className="2xl:h-[700px] h-[600px] bg-cover bg-center"
         style={{ backgroundImage: 'url("/bannerbg.png")' }}
       >
-        <div className="container mx-auto px-20">
-          <div className=" flex  items-center flex-wrap-reverse md:flex-nowrap  2xl:h-[700px] h-[600px]">
+        <div className="container mx-auto sm:px-20 px-5">
+          <div className=" flex items-center flex-wrap-reverse md:flex-nowrap  2xl:h-[700px] h-[600px]">
             <div className="md:w-[630px] w-full">
               <h1 className="text-white sm:text-5xl text-2xl leading-normal font-bold md:w-[630px]">
                 A Registered Leading Disability Support Providers
               </h1>
-              <p className="text-white">
+              <p className="text-white sm:block hidden">
                 At Personal Best Support Services, we are dedicated to
                 transforming the lives of individuals with disabilities by
                 providing personalized, compassionate, and client-centered care.
@@ -35,7 +35,7 @@ const HomeBanner = () => {
                 />
               </div>
             </div>
-            <div className="self-end">
+            <div className="sm:self-end">
               <Image
                 width="400"
                 height="350"

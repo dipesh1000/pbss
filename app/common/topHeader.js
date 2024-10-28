@@ -10,7 +10,7 @@ import { RiFacebookBoxLine } from 'react-icons/ri';
 
 const TopHeader = () => {
   return (
-    <div className="flex items-center justify-between flex-wrap bg-white">
+    <div className="sm:flex hidden items-center justify-between flex-wrap bg-white">
       <ul className="flex flex-wrap">
         <li className="flex items-center text-primaryBlue text-sm">
           <a>

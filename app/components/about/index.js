@@ -7,24 +7,24 @@ import React from 'react';
 const AboutComponents = ({ isFag, title }) => {
   return (
     <div
-      className="bg-no-repeat bg-cover bg-center h-[610px]"
+      className="bg-no-repeat bg-cover bg-center lg:h-[610px]"
       style={{ backgroundImage: 'url("/aboutbg.png")' }}
     >
-      <div className="container mx-auto py-20 px-20">
-        <div className="flex flex-wrap">
-          <div className="lg:w-[500px] w-full relative">
+      <div className="container mx-auto py-20 lg:px-20 px-5">
+        <div className="flex sm:flex-nowrap flex-wrap">
+          <div className="sm:w-[50%] w-full relative">
             <div className="absolute right-0 z-[0]">
               <AboutImageBox />
             </div>
 
             <div
-              className="h-[410px] top-10 right-20 w-[400px] absolute sm:block hidden bg-contain bg-no-repeat bg-center"
+              className="h-[410px] top-10 right-20 lg:w-[400px] w-full lg:absolute sm:block hidden bg-contain bg-no-repeat bg-center"
               style={{ backgroundImage: 'url("/shadowbg.png")' }}
             >
               <AboutFamilyBox />
             </div>
           </div>
-          <div className="flex-1 sm:pl-20 pl-0">
+          <div className="flex-1 md:pl-20 pl-5">
             <div>
               {isFag ? <CustomChip label="About Us" /> : ''}
               <div className="mt-4">

@@ -13,9 +13,9 @@ const ContactComponent = () => {
         className="bg-no-repeat bg-cover bg-center"
         style={{ backgroundImage: 'url("/contactbg.png")' }}
       >
-        <div className="container mx-auto py-20 px-20">
+        <div className="container mx-auto py-20 lg:px-20 px-5">
           <div className="flex flex-wrap">
-            <div className="md:w-[500px] w-full">
+            <div className="lg:w-[500px] w-full">
               <p className="text-darkText">Contact Us</p>
               <HeadingTitle title="Ask a Question" />
               <div className="grid gap-6 sm:grid-cols-2 grid-cols-1">
@@ -24,7 +24,7 @@ const ContactComponent = () => {
                 <Custominput label="Your Phone" name="phone" />
                 <Custominput label="Select Services" />
               </div>
-              <div className="w-[500px] pt-6 grid grid-cols-1 gap-4">
+              <div className="lg:w-[500px] w-full pt-6 grid grid-cols-1 gap-4">
                 <CustomTextArea label="Write Message" />
               </div>
               <div>
@@ -60,7 +60,7 @@ const ContactComponent = () => {
                       Write a Email
                     </p>
                     <span className="font-semibold text-darkText">
-                      info@personalbestsupportservices.com.au
+                      info@pbss.com.au
                     </span>
                   </div>
                 </li>

@@ -18,7 +18,7 @@ const FeaturesSection = () => {
           <div className="flex flex-wrap">
             <div className="md:w-[600px] w-full">
               <CustomChip label="Why Us" bgColor="bg-pinkctabg" />
-              <div className="py-4 w-[600px]">
+              <div className="py-4 sm:w-[600px] w-full">
                 <HeadingTitle
                   color="text-pinkctabg"
                   title="Why Choose Personal Best Support Services

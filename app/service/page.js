@@ -1,6 +1,7 @@
 import React from 'react';
 import Minibanner from '../common/minibanner';
 import ServiceComponent from '../components/services';
+import { fetchPosts } from '@/API';
 
 const ServicePage = () => {
   return (

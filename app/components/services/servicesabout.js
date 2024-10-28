@@ -11,15 +11,15 @@ const Servicesabout = async ({ topLabel, serviceData }) => {
   const data = Services;
 
   return (
-    <div className="relative h-[700px]">
-      <div className="container mx-auto relative pl-20 pt-20 pb-10">
+    <div className="relative sm:h-[700px] h-auto">
+      <div className="container mx-auto relative md:pl-20 px-8 pt-20 pb-10">
         <div className="  text-center ">
           <CustomChip label={`${topLabel ?? 'Our Services'}`} />
         </div>
         <div className="pt-4">
           <div className="flex flex-col items-center py-2">
             <HeadingTitle title="NDIS Support Services for Everyday Living" />
-            <p className="py-2 w-[550px] px-2 text-center">
+            <p className="py-2 md:w-[550px] w-full px-2 text-center">
               Our NDIS support services offer a broad range of assistance to
               improve daily living and foster community involvement. These
               include:
@@ -27,7 +27,9 @@ const Servicesabout = async ({ topLabel, serviceData }) => {
           </div>
         </div>
       </div>
-      <ServiceList serviceData={serviceData} data={data} />
+      <div className="container mx-auto">
+        <ServiceList serviceData={serviceData} data={data} />
+      </div>
     </div>
   );
 };

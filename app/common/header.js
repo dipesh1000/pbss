@@ -6,10 +6,12 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Services } from '@/rawdata/service';
+import { fetchPosts } from '@/API';
 
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [serviceList, setServiceList] = useState(null);
 
   const dropdownRef = useRef(null);
   const mobileMenuRef = useRef(null);
@@ -18,6 +20,10 @@ const Header = () => {
 
   // Handle clicks outside of the dropdown and mobile menu
   useEffect(() => {
+    async function getServiceData() {
+      setServiceList(await fetchPosts());
+    }
+    getServiceData();
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setDropdownOpen(false);
@@ -36,6 +42,8 @@ const Header = () => {
     };
   }, []);
 
+  console.log(serviceList, 'from service list');
+
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -51,7 +59,7 @@ const Header = () => {
         <TopHeader />
       </div>
       <div className="bg-headerbg">
-        <div className="container mx-auto px-20 relative">
+        <div className="container mx-auto lg:px-20 px-5 sm:py-0 py-2 relative">
           <div className="flex items-center">
             <Link href="/" className="flex-grow">
               <Image width={200} height={80} src="/logo.png" alt="Logo"></Image>
@@ -82,13 +90,13 @@ const Header = () => {
                 </button>
                 {isDropdownOpen && (
                   <div className="absolute left-0 font-semibold w-80 bg-white  text-sm border border-gray-200 rounded shadow">
-                    {data.map((item, idx) => (
+                    {serviceList.map((item, idx) => (
                       <Link
                         key={idx + 1}
                         href={`/service/${item.id}`}
                         className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                       >
-                        {item.title}
+                        {item.title.rendered}
                       </Link>
                     ))}
                   </div>
@@ -104,7 +112,7 @@ const Header = () => {
               </Link>
             </div>
           </div>
-          <div className="md:hidden absolute top-7 right-0">
+          <div className="md:hidden absolute top-7 right-4">
             <button
               onClick={toggleMobileMenu}
               className="text-gray-700 hover:text-blue-600 focus:outline-none"
@@ -127,10 +135,7 @@ const Header = () => {
             </button>
           </div>
           {isMobileMenuOpen && (
-            <div
-              ref={mobileMenuRef}
-              className="md:hidden bg-white border-t border-gray-200"
-            >
+            <div ref={mobileMenuRef} className="md:hidden bg-white py-2">
               <Link
                 href="#"
                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100"

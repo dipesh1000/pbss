@@ -9,10 +9,10 @@ import Image from 'next/image';
 
 const ServiceComponent = async ({ pageKey }) => {
   let items = await fetchPosts();
-  console.log(items, 'from items in line 11');
+
   return (
     <div className="bg-lightpalebg">
-      <div className="container mx-auto px-20 py-20">
+      <div className="container mx-auto sm:px-20 px-5 py-20">
         {pageKey === 'service' ? (
           ''
         ) : (
@@ -32,7 +32,6 @@ const ServiceComponent = async ({ pageKey }) => {
 
           <ul className="grid gap-4 grid-cols-1 md:grid-cols-3  sm:grid-cols-2 xs:grid-cols-1 lg:grid-cols-4">
             {items?.map((item, idx) => {
-              console.log(Boolean(item.acf.icon), 'dasdsad');
               return (
                 <li
                   key={idx + 1}

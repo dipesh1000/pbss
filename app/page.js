@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import HomeBanner from './components/banner';
 import ServiceComponent from './components/services';
 import AboutComponents from './components/about';
@@ -6,8 +5,11 @@ import WhyChooseUsComponents from './components/features';
 import ContactComponent from './components/contact';
 import FacComponent from './components/faq';
 import { FrontAds } from './components/ads';
+import { fetchHomePageData } from '@/API';
 
-export default function Home() {
+export default async function Home() {
+  const data = await fetchHomePageData();
+
   return (
     <>
       <HomeBanner />
@@ -19,7 +21,7 @@ export default function Home() {
 
 We are passionate about offering tailored support that meets the unique needs and aspirations of each person we serve. Our experienced and caring team works diligently to empower lives and enable dreams, ensuring that every client can thrive, achieve their goals, and truly shine. Join us on a journey of empowerment and transformation, because at Personal Best, we believe in enabling dreams and fostering independence."
       />
-      <WhyChooseUsComponents />
+      <WhyChooseUsComponents data={data?.acf} />
       <ContactComponent />
       <FacComponent />
 

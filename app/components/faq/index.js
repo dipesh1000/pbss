@@ -47,7 +47,7 @@ const data = [
 ];
 const FacComponent = async () => {
   const faqs = await fetchFAQ();
-  console.log(faqs, 'From the FAQs');
+
   return (
     <div className="bg-white">
       <div className="container mx-auto lg:px-20 px-5 py-16">

@@ -12,7 +12,7 @@ const FooterComponent = () => {
       <div className="container mx-auto lg:px-20 px-5 py-10">
         <div className="flex items-start flex-wrap">
           <div className="lg:w-72 w-full">
-            <div className="lg:w-72 w-full">
+            <div className="lg:w-72 w-full pb-5">
               <div className="mb-4">
                 <Image width={200} height={80} src="/logo.png"></Image>
               </div>
@@ -21,7 +21,7 @@ const FooterComponent = () => {
                 transforming the lives of individuals with disabilities by
                 providing personalized, compassionate, and client-centered care.
               </p>
-              <Link className="text-primaryBlue font-semibold " href={''}>
+              <Link className="text-primaryBlue font-semibold" href={''}>
                 Know More
               </Link>
             </div>
@@ -30,17 +30,17 @@ const FooterComponent = () => {
               <ul className="flex pl-4">
                 <li>
                   <a>
-                    <CiFacebook />
+                    <CiFacebook fontSize={30} />
                   </a>
                 </li>
                 <li>
                   <a>
-                    <PiInstagramLogoLight />
+                    <PiInstagramLogoLight fontSize={30} />
                   </a>
                 </li>
                 <li>
                   <a>
-                    <PiLinkedinLogoLight />
+                    <PiLinkedinLogoLight fontSize={30} />
                   </a>
                 </li>
               </ul>
@@ -75,7 +75,7 @@ const FooterComponent = () => {
             <hr />
             <div className="flex justify-between flex-wrap">
               <div className="md:w-[480px] w-full">
-                <h5 className="my-2 text-darkText">
+                <h5 className="my-2 text-primaryBlue">
                   <b>Our Services</b>
                 </h5>
                 <ul className="grid grid-cols-2 gap-2 text-darkText">
@@ -90,7 +90,7 @@ const FooterComponent = () => {
                 </ul>
               </div>
               <div>
-                <h5 className="my-2 text-darkText">
+                <h5 className="my-2 text-primaryBlue">
                   <b>About</b>
                 </h5>
                 <ul className="text-darkText">
@@ -100,7 +100,7 @@ const FooterComponent = () => {
                 </ul>
               </div>
               <div>
-                <h5 className="my-2 text-darkText">
+                <h5 className="my-2 text-primaryBlue">
                   <b>Assistance</b>
                 </h5>
                 <ul className="text-darkText">

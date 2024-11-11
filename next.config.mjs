@@ -4,13 +4,14 @@ const nextConfig = {
     domains: [
       'http://localhost',
       'https://cloudfront-us-east-2.images.arcpublishing.com/',
+      'https://api.personalbestsupportservices.com.au/',
     ],
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '8888', // Include port if necessary
-        pathname: '/pbss/wp-content/uploads/**', // Adjust the path to match your media URLs
+        protocol: 'https',
+        hostname: 'api.personalbestsupportservices.com.au',
+        port: '', // Include port if necessary
+        pathname: '/wp-content/uploads/**', // Adjust the path to match your media URLs
       },
     ],
   },

@@ -4,6 +4,7 @@ import Header from './common/header';
 import FooterComponent from './common/footer';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { GlobalDataProvider } from '@/context/GlobalDataContext';
 
 // const geistSans = localFont({
 //   src: './fonts/GeistVF.woff',
@@ -23,12 +24,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={` antialiased `}>
-        <Header />
-        {children}
-        <FooterComponent />
-      </body>
-    </html>
+    <GlobalDataProvider>
+      <html lang="en">
+        <title>Personal Best Support Services</title>
+        <body className={` antialiased `}>
+          <Header />
+          {children}
+          <FooterComponent />
+        </body>
+      </html>
+    </GlobalDataProvider>
   );
 }

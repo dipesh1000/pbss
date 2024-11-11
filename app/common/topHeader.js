@@ -1,14 +1,15 @@
 import React from 'react';
 import { CiPhone } from 'react-icons/ci';
 import { CiMail } from 'react-icons/ci';
-import { LiaFacebookSquare } from 'react-icons/lia';
 import { LuInstagram } from 'react-icons/lu';
 import { TbBrandYoutube } from 'react-icons/tb';
 import { FaXTwitter } from 'react-icons/fa6';
 import Image from 'next/image';
 import { RiFacebookBoxLine } from 'react-icons/ri';
+import { useGlobalData } from '@/context/GlobalDataContext';
 
 const TopHeader = () => {
+  const data = useGlobalData();
   return (
     <div className="sm:flex hidden items-center justify-between flex-wrap bg-white">
       <ul className="flex flex-wrap">
@@ -16,15 +17,13 @@ const TopHeader = () => {
           <a>
             <CiPhone />
           </a>
-          <span className="pl-1 ">9999999999</span>
+          <span className="pl-1 ">{data?.phone}</span>
         </li>
         <li className="flex items-center text-primaryBlue pl-4">
           <a>
             <CiMail />
           </a>
-          <span className="pl-1 text-sm">
-            info@personalbestsupportservices.com.au
-          </span>
+          <span className="pl-1 text-sm">{data?.email}</span>
         </li>
       </ul>
       <ul className="flex items-center w-32 leading-loose justify-between border-l h-10 border-gray-300 pl-9">
